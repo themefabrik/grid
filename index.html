@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>grid | components</title>
+    
+    <!-- Css -->
+    <link type="text/css" rel="stylesheet" href="css/grid.css" />
+    
+    <!-- Styles to visualize grid and examples -->
+    <style type="text/css">
+        .container {
+            padding: 4rem 0;
+        }
+        .showcase .col {
+            background: #f5f5f5;
+            text-align: center;
+            line-height: 2.5;
+            margin-bottom: 1.5rem;
+            background-clip: content-box;
+        }
+        .showcase .col .col {
+            background-color: #e1e1e1;
+            margin-bottom: 0;
+        }
+        .code-snippet-title {
+            padding: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            background-color: #eaeaea;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-top-left-radius: .4rem;
+            border-top-right-radius: .4rem;
+        }
+        code {
+            padding: .2rem .5rem;
+            margin: 0 0 2rem;
+            font-size: 90%;
+            white-space: nowrap;
+            background: #f9f9f9;
+            border: 1px solid #eaeaea;
+            border-top: none;
+            border-radius: .4rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        pre {
+            margin: 0;
+        }
+        pre > code {
+            display: block;
+            padding: 0 2rem;
+            white-space: pre;
+            overflow: scroll;
+        }
+        hr {      
+            margin: 4rem 0;
+            height: 0;
+            border: none;
+            border-bottom: 1px solid #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="col span-12 showcase">
+                <h2>The Grid</h2>
+                <h5>12 column based grid</h5>
+                <p>The grid is based on 12 columns which can be combined with another. Gutters between the columns can optionally be turned off with just one <code>.no-gutter</code> class. The max width can be changed by modifying max-width property of the entire <code>.container</code> class wrapped around all grids. Inluding columns will resize accordingly.</p>
+                <div class="grid">
+                    <div class="col span-1">1</div>
+                    <div class="col span-11">11</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-2">2</div>
+                    <div class="col span-10">10</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-3">3</div>
+                    <div class="col span-9">9</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-4">4</div>
+                    <div class="col span-8">8</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-5">5</div>
+                    <div class="col span-7">7</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-6">6</div>
+                    <div class="col span-6">6</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-7">7</div>
+                    <div class="col span-5">5</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-8">8</div>
+                    <div class="col span-4">4</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-9">9</div>
+                    <div class="col span-3">3</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-10">10</div>
+                    <div class="col span-2">2</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-11">11</div>
+                    <div class="col span-1">1</div>
+                </div>
+                <div class="grid">
+                    <div class="col span-4">
+                        4 		
+                    </div>
+                    <div class="col span-4">
+                        4 		
+                    </div>
+                    <div class="col span-4">
+                        4 		
+                    </div>
+                </div>
+                <h6 class="code-snippet-title">Example</h6>
+                <pre><code>
+&lt;div class="grid"&gt;
+&lt;div class="col span-6"&gt;...&lt;/div&gt;
+&lt;div class="col span-6"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+                <hr>
+                <h5>Nested grids</h5>
+                <p>Creating more complex layouts is no problem by nesting grids. Again it's up to you if you want spaces between certain nested grids.</p>
+                <div class="grid">
+                    <div class="col span-6">
+                        6<br>
+                        <div class="grid">
+                            <div class="col span-4">4</div>
+                            <div class="col span-8">8</div>
+                        </div>
+                    </div>
+                    <div class="col span-6">
+                        6<br>
+                        <div class="grid no-gutter">
+                            <div class="col span-4">4</div>
+                            <div class="col span-8">8</div>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="code-snippet-title">Example</h6>
+                <pre><code>
+&lt;div class="grid"&gt;
+&lt;div class="col span-6"&gt;
+ &lt;div class="grid"&gt;
+   &lt;div class="col span-4"&gt;4 &lt;/div&gt;
+   &lt;div class="col span-8"&gt;8 &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col span-6"&gt;
+ &lt;div class="grid no-gutter"&gt;
+   &lt;div class="col span-4"&gt;4 &lt;/div&gt;
+   &lt;div class="col span-8"&gt;8 &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+                <hr>
+                <h5>Column offset</h5>
+                <p>offset columns</p>
+                <div class="grid">
+                    <div class="col span-6">
+                        6
+                        <div class="grid">
+                            <div class="col span-4">4</div>
+                            <div class="col span-8">8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="col span-6 offset-3">
+                        6
+                        <div class="grid">
+                            <div class="col span-4">4</div>
+                            <div class="col span-8">8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="col span-6 offset-6">
+                        6
+                        <div class="grid">
+                            <div class="col span-4">4</div>
+                            <div class="col span-8">8</div>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="code-snippet-title">Example</h6>
+                <pre><code>
+&lt;div class="grid"&gt;
+&lt;div class="col span-6 offset-3"&gt;
+...
+&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+                <hr>
+                <h5>Rearrange columns</h5>
+                <p>Columns can be rearranged with the classes <code>.pull-left</code> and <code>.pull-right</code> This is recommendend for two column grids only.<br>
+                    Keep in mind that columns appear on mobile in the same order as they are within the markup.
+                </p>
+                <div class="grid">
+                    <div class="col span-4 pull-right">4</div>
+                    <div class="col span-8 pull-left">8</div>
+                </div>
+                <h6 class="code-snippet-title">Example</h6>
+                <pre><code>
+&lt;div class="grid"&gt;
+&lt;div class="col span-4 pull-right"&gt;4&lt;/div&gt;
+&lt;div class="col span-8 pull-left"&gt;8&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+                <hr>
+                <h5>Image Grids</h5>
+                <p>Create instant grids from one to six columns by wrapping a <code>.content-grid-x</code> class around grid items. This can be useful for an image gallery. This only makes sense if the thumbails have equal dimensions.</p>
+                <div class="content-grid-4">
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/image.jpg" alt="">
+                    </div>
+                </div>
+                <h6 class="code-snippet-title">Example</h6>
+                <pre><code>
+&lt;div class="content-grid-4"&gt;
+&lt;div class="grid-item"&gt;
+    &lt;img src="img/image.jpg" alt=""&gt;
+&lt;/div&gt;
+&lt;div class="grid-item"&gt;
+    &lt;img src="img/image.jpg" alt=""&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
